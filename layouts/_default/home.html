@@ -1,0 +1,213 @@
+{{ define "main" }}
+
+  {{/* ── Intro text ───────────────────────────────────────────────── */}}
+  <style>
+    .home-intro p {
+      text-align: center !important;
+      color: rgba(255,255,255,0.82) !important;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      line-height: 1.7;
+      margin: 0;
+    }
+  </style>
+  <div style="background: linear-gradient(160deg, #1a1a2e 0%, #16213e 100%); width: 100%;">
+    <div style="width: 90%; max-width: 46rem; margin: 0 auto; padding: clamp(2.5rem, 6vw, 5rem) 0; text-align: center;">
+      <div class="home-intro">
+        {{ .Content }}
+      </div>
+      <div style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+        <a href="/contact"
+           style="background:#c9a84c; color:#1a1a2e; font-weight:600; font-size:clamp(.9rem,1.5vw,1rem); padding:.75rem 2rem; border-radius:.25rem; text-decoration:none; letter-spacing:.05em; display:inline-block;">
+          Schedule a Consultation
+        </a>
+        <a href="/listings"
+           style="border:2px solid #c9a84c; color:#c9a84c; font-weight:600; font-size:clamp(.9rem,1.5vw,1rem); padding:.75rem 2rem; border-radius:.25rem; text-decoration:none; display:inline-block;">
+          Browse Listings
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {{/* ── Services cards ──────────────────────────────────────────── */}}
+  <div class="bg-white pv6">
+    <div class="mw8 center ph4">
+      <h2 class="f2 fw6 tc mb2" style="color:#1a1a2e;">How We Can Help</h2>
+      <p class="f5 tc mid-gray measure center mb5 lh-copy">
+        From first-time buyers to seasoned investors, we guide every step of your real estate journey.
+      </p>
+      <div class="flex flex-wrap justify-center nl3 nr3">
+
+        <div class="w-100 w-third-l pa3">
+          <div class="ba b--light-gray br3 pa4 tc h-100 shadow-hover"
+               style="border-top: 4px solid #c9a84c !important;">
+            <div class="f1 mb3">&#127968;</div>
+            <h3 class="f4 fw7 mb2" style="color:#1a1a2e;">Buy a Home</h3>
+            <p class="f5 mid-gray lh-copy mt0">
+              Find your perfect Phoenix-area home with expert guidance, neighborhood insights, and negotiation that works in your favor.
+            </p>
+          </div>
+        </div>
+
+        <div class="w-100 w-third-l pa3">
+          <div class="ba b--light-gray br3 pa4 tc h-100 shadow-hover"
+               style="border-top: 4px solid #c9a84c !important;">
+            <div class="f1 mb3">&#128176;</div>
+            <h3 class="f4 fw7 mb2" style="color:#1a1a2e;">Sell Your Property</h3>
+            <p class="f5 mid-gray lh-copy mt0">
+              Maximize your sale price with professional staging advice, targeted marketing, and a proven sales strategy.
+            </p>
+          </div>
+        </div>
+
+        <div class="w-100 w-third-l pa3">
+          <div class="ba b--light-gray br3 pa4 tc h-100 shadow-hover"
+               style="border-top: 4px solid #c9a84c !important;">
+            <div class="f1 mb3">&#128200;</div>
+            <h3 class="f4 fw7 mb2" style="color:#1a1a2e;">Invest &amp; Grow</h3>
+            <p class="f5 mid-gray lh-copy mt0">
+              Build long-term wealth through Arizona's booming real estate market with data-driven investment strategies.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  {{/* ── Stats bar ────────────────────────────────────────────────── */}}
+  <div style="background:#c9a84c;">
+    <div class="mw8 center ph4 pv4">
+      <div class="flex flex-wrap justify-around tc">
+        <div class="w-50 w-25-l pv3">
+          <div class="f2 fw8 white">500+</div>
+          <div class="f6 fw5 white-80 ttu tracked">Homes Sold</div>
+        </div>
+        <div class="w-50 w-25-l pv3">
+          <div class="f2 fw8 white">15+</div>
+          <div class="f6 fw5 white-80 ttu tracked">Years in Phoenix</div>
+        </div>
+        <div class="w-50 w-25-l pv3">
+          <div class="f2 fw8 white">$2B+</div>
+          <div class="f6 fw5 white-80 ttu tracked">In Transactions</div>
+        </div>
+        <div class="w-50 w-25-l pv3">
+          <div class="f2 fw8 white">98%</div>
+          <div class="f6 fw5 white-80 ttu tracked">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/* ── Photo gallery strip ──────────────────────────────────────── */}}
+  <div class="bg-near-white pv5">
+    <div class="mw8 center ph4">
+      <h2 class="f3 fw6 tc mb4" style="color:#1a1a2e;">Phoenix Properties We Love</h2>
+      <div class="flex flex-wrap nl2 nr2">
+        <div class="w-100 w-third-l pa2">
+          <div class="overflow-hidden br3" style="height:220px;">
+            <img src="{{ "images/Luxory1.jpg" | relURL }}" alt="Luxury home"
+                 class="w-100 h-100 db"
+                 style="object-fit:cover; transition:transform .4s ease;"
+                 onmouseover="this.style.transform='scale(1.05)'"
+                 onmouseout="this.style.transform='scale(1)'">
+          </div>
+        </div>
+        <div class="w-100 w-third-l pa2">
+          <div class="overflow-hidden br3" style="height:220px;">
+            <img src="{{ "images/Luxory2.jpg" | relURL }}" alt="Luxury home interior"
+                 class="w-100 h-100 db"
+                 style="object-fit:cover; transition:transform .4s ease;"
+                 onmouseover="this.style.transform='scale(1.05)'"
+                 onmouseout="this.style.transform='scale(1)'">
+          </div>
+        </div>
+        <div class="w-100 w-third-l pa2">
+          <div class="overflow-hidden br3" style="height:220px;">
+            <img src="{{ "images/Landscape1.jpg" | relURL }}" alt="Arizona landscape"
+                 class="w-100 h-100 db"
+                 style="object-fit:cover; transition:transform .4s ease;"
+                 onmouseover="this.style.transform='scale(1.05)'"
+                 onmouseout="this.style.transform='scale(1)'">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/* ── Why choose us ────────────────────────────────────────────── */}}
+  <div class="bg-white pv6">
+    <div class="mw8 center ph4">
+      <div class="flex flex-wrap items-center">
+        <div class="w-100 w-50-l pr5-l mb4 mb0-l">
+          <h2 class="f2 fw7 lh-title mb3" style="color:#1a1a2e;">
+            Why Pinnacle Realty Group?
+          </h2>
+          <p class="f5 mid-gray lh-copy mb4">
+            We combine local market expertise with a personalized approach — treating every transaction as if it were our own. Our team is deeply embedded in the Phoenix community and committed to your success.
+          </p>
+          <div class="flex flex-wrap nl2 nr2">
+            <div class="w-100 w-50-m pa2">
+              <div class="flex items-start">
+                <span class="f4 mr2" style="color:#c9a84c;">&#10003;</span>
+                <div>
+                  <div class="f5 fw6" style="color:#1a1a2e;">Local Market Experts</div>
+                  <div class="f6 mid-gray lh-copy">Deep knowledge of Phoenix neighborhoods and trends.</div>
+                </div>
+              </div>
+            </div>
+            <div class="w-100 w-50-m pa2">
+              <div class="flex items-start">
+                <span class="f4 mr2" style="color:#c9a84c;">&#10003;</span>
+                <div>
+                  <div class="f5 fw6" style="color:#1a1a2e;">Data-Driven Strategy</div>
+                  <div class="f6 mid-gray lh-copy">Decisions backed by real market analytics.</div>
+                </div>
+              </div>
+            </div>
+            <div class="w-100 w-50-m pa2">
+              <div class="flex items-start">
+                <span class="f4 mr2" style="color:#c9a84c;">&#10003;</span>
+                <div>
+                  <div class="f5 fw6" style="color:#1a1a2e;">Full-Service Support</div>
+                  <div class="f6 mid-gray lh-copy">From search to closing — we're with you every step.</div>
+                </div>
+              </div>
+            </div>
+            <div class="w-100 w-50-m pa2">
+              <div class="flex items-start">
+                <span class="f4 mr2" style="color:#c9a84c;">&#10003;</span>
+                <div>
+                  <div class="f5 fw6" style="color:#1a1a2e;">Proven Track Record</div>
+                  <div class="f6 mid-gray lh-copy">500+ successful closings across the Valley.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-100 w-50-l">
+          <div class="overflow-hidden br3 shadow-2" style="height:380px;">
+            <img src="{{ "images/Luxory3.jpg" | relURL }}" alt="Luxury property"
+                 class="w-100 h-100 db"
+                 style="object-fit:cover;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/* ── CTA banner ───────────────────────────────────────────────── */}}
+  <div style="background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);">
+    <div class="mw7 center ph4 pv6 tc">
+      <h2 class="f2 fw7 white mb2">Ready to Find Your Dream Home?</h2>
+      <p class="f5 white-70 lh-copy measure center mb4">
+        Whether you're buying, selling, or investing — our team is ready to make your next move the best one yet.
+      </p>
+      <a href="/contact"
+         class="f5 fw6 dib ph5 pv3 br2 no-underline"
+         style="background:#c9a84c; color:#1a1a2e; letter-spacing:.05em;">
+        Contact Us Today
+      </a>
+    </div>
+  </div>
+
+{{ end }}

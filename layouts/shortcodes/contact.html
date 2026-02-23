@@ -1,0 +1,85 @@
+<div class="contact-page pa4">
+
+  <!-- Contact Info -->
+  <div class="contact-info mb5">
+    <h2 class="f3 fw6 mb3">Get In Touch</h2>
+    <p class="f5 mb2">📍 1234 Camelback Rd, Suite 200, Phoenix, AZ 85016</p>
+    <p class="f5 mb2">📞 (602) 555-0198</p>
+    <p class="f5 mb2">✉️ contact@pinnaclerealty.com</p>
+    <p class="f5 mb2">🕐 Mon–Fri: 8am – 6pm | Sat: 9am – 4pm</p>
+  </div>
+
+  <!-- Google Maps Embed -->
+  <div class="map-container mb5">
+    <h2 class="f3 fw6 mb3">Our Location</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.5!2d-112.0267!3d33.5093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b128f0!2sCamelback+Rd%2C+Phoenix%2C+AZ!5e0!3m2!1sen!2sus!4v1"
+      width="100%"
+      height="400"
+      style="border:0; border-radius:8px;"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <!-- Review Slider -->
+  <div class="reviews-section mb5">
+    <h2 class="f3 fw6 mb4">What Our Clients Say</h2>
+    <div class="slider-container">
+      <div class="slides">
+
+        <div class="slide">
+          <p class="f4 i mb3">"Pinnacle made buying our first home an absolute breeze. Professional, responsive, and truly knew the Phoenix market inside and out."</p>
+          <p class="f5 fw6">— Sarah T., Scottsdale</p>
+          <p class="gold f4">★★★★★</p>
+        </div>
+
+        <div class="slide">
+          <p class="f4 i mb3">"We sold our home in under two weeks above asking price. Couldn't be happier with the Pinnacle team."</p>
+          <p class="f5 fw6">— Marcus & Linda R., Tempe</p>
+          <p class="gold f4">★★★★★</p>
+        </div>
+
+        <div class="slide">
+          <p class="f4 i mb3">"As an investor, I need an agent who understands numbers. Pinnacle delivered every time — sharp, reliable, and honest."</p>
+          <p class="f5 fw6">— James K., Phoenix</p>
+          <p class="gold f4">★★★★★</p>
+        </div>
+
+      </div>
+      <div class="slider-controls mt3">
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Slider CSS -->
+<style>
+  .slider-container { position: relative; max-width: 700px; }
+  .slides .slide { display: none; background: #f9f9f9; padding: 2rem; border-radius: 8px; }
+  .slides .slide.active { display: block; }
+  .slider-controls { display: flex; gap: 1rem; }
+  .slider-controls button {
+    background: #1a1a1a; color: white; border: none;
+    padding: 0.5rem 1.2rem; font-size: 1.2rem;
+    border-radius: 4px; cursor: pointer;
+  }
+  .slider-controls button:hover { background: #444; }
+  .gold { color: #f5a623; }
+</style>
+
+<!-- Slider JS -->
+<script>
+  let current = 0;
+  const slides = document.querySelectorAll('.slide');
+  slides[0].classList.add('active');
+
+  function changeSlide(dir) {
+    slides[current].classList.remove('active');
+    current = (current + dir + slides.length) % slides.length;
+    slides[current].classList.add('active');
+  }
+</script>
